@@ -1,5 +1,9 @@
 version: "3"
 services:
+  mariadb:
+    ports:
+      - "127.0.0.1:3307:3306"
+
   php:
     image: project
     build:
@@ -12,3 +16,16 @@ services:
     ports:
       - "127.0.0.1:8000:8000"
     command: "php artisan serve --host=0.0.0.0 --port=8000"
+
+  # run phpmyadmin to debug mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+     - PMA_HOST=mariadb
+     - PMA_PORT=3306
+     - PMA_USER=root
+     - PMA_PASSWORD=4sfdg64s89g4sfd6g84sd6g45
+    ports:
+     - 8101:80
+    networks:
+      - studiomoto
