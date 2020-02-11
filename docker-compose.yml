@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      networks:
-        - studiomoto
+    networks:
+      - studiomoto
   mariadb:
     image: mariadb
     environment:
