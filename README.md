@@ -6,6 +6,7 @@
 
 ```
 docker-compose build
+docker-compose run artisan key:generate
 docker-compose run composer install
 docker-compose up
 ```
