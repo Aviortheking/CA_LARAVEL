@@ -13,9 +13,9 @@
 
 ```
 docker-compose build
-cp ./env.example ./env
-docker-compose run php artisan key:generate
+cp ./.env.example ./.env
 docker-compose run php composer install
+docker-compose run php php artisan key:generate
 docker-compose up
 ```
 
@@ -23,8 +23,8 @@ docker-compose up
 ### Prod
 
 ```
-docker-compose build
 cp ./env.example ./env
-docker-compose run php artisan key:generate
-docker-compose up -f docker-compose.yml -f docker-compose.prod.ym
+docker-compose build
+docker-compose run -f docker-compose.yml -f docker-compose.prod.yml php php artisan key:generate
+docker-compose up -f docker-compose.yml -f docker-compose.prod.yml
 ```
