@@ -8,7 +8,7 @@ services:
     networks:
       - studiomoto
   mariadb:
-    image: mariadb
+    image: mysql
     environment:
       - MYSQL_ROOT_PASSWORD=4sfdg64s89g4sfd6g84sd6g45
       - MYSQL_DATABASE=stm
