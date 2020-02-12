@@ -121,6 +121,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+		'Collective\Html\HtmlServiceProvider',
 
 	),
 
@@ -135,7 +136,7 @@ return array(
 	|
 	*/
 
-	'manifest' => storage_path().'/meta',
+	'manifest' => storage_path() . '/meta',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -164,7 +165,7 @@ return array(
 		'Eloquent'          => 'Illuminate\Database\Eloquent\Model',
 		'Event'             => 'Illuminate\Support\Facades\Event',
 		'File'              => 'Illuminate\Support\Facades\File',
-		'Form'              => 'Illuminate\Support\Facades\Form',
+		// 'Form'              => 'Illuminate\Support\Facades\Form',
 		'Hash'              => 'Illuminate\Support\Facades\Hash',
 		'HTML'              => 'Illuminate\Support\Facades\HTML',
 		'Input'             => 'Illuminate\Support\Facades\Input',
@@ -188,6 +189,8 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+		'Form' 				=> 'Collective\Html\FormFacade',
+
 
 	),
 
