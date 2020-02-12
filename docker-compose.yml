@@ -5,3 +5,20 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    networks:
+      - studiomoto
+  mariadb:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=4sfdg64s89g4sfd6g84sd6g45
+      - MYSQL_DATABASE=stm
+      - MYSQL_USER=stm
+      - MYSQL_PASSWORD=stm
+    networks:
+      - studiomoto
+    volumes:
+      - ./.storage/mysql/:/var/lib/mysql
+
+networks:
+  studiomoto:
+    external: false

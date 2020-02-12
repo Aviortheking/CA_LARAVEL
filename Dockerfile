@@ -31,7 +31,7 @@ RUN apk --update add --no-cache --virtual build-deps yarn composer libzip-dev $P
 # pdo mysqli pdo_mysql are for database connexions
 RUN pecl install mcrypt
 RUN docker-php-ext-enable mcrypt
-RUN docker-php-ext-install zip
+RUN docker-php-ext-install zip pdo mysqli pdo_mysql
 
 # Setup nginx and PHP
 COPY ./docker/ /
