@@ -16,7 +16,8 @@ services:
       - MYSQL_PASSWORD=stm
     networks:
       - studiomoto
-
+    volumes:
+      - ./.storage/mysql/:/var/lib/mysql
 
 networks:
   studiomoto:
