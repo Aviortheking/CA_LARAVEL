@@ -12,6 +12,11 @@
      {{ Session::get('success') }}
    </div>
 @endif
+@if(Session::has('error'))
+   <div class="alert alert-danger">
+     {{ Session::get('error') }}
+   </div>
+@endif
 {!! Form::open(['route'=>'contactus.store']) !!}
 <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
 {!! Form::label('Nom:') !!}

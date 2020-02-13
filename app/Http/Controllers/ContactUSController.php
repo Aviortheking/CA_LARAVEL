@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\ContactUS;
+use App\Mail\EmailReceipt;
+use Illuminate\Support\Facades\Form;
+use App\Mail\ContactEmail;
 use Mail;
+use Exception;
 
 class ContactUSController extends Controller
 {
@@ -19,31 +23,13 @@ class ContactUSController extends Controller
         $this->validate($request, ['name' => 'required', 'email' => 'required|email', 'message' => 'required']);
         ContactUS::create($request->all());
 
+        try {
+            Mail::send(new ContactEmail(array('name' => $request->get('name'),'email' => $request->get('email'),'user_message' => $request->get('message'))));
+        } catch (Exception $e) {
+            return back()->with('error', 'Erreur lors de l\'envoie du Mail, Réessayer');
+        }
+        Mail::to($request->get('email'))->send(new EmailReceipt(array('name' => $request->get('name'))));
 
-        $email_sender = $request->get('email');
-
-        Mail::send(
-            'email',
-            array(
-                'name' => $request->get('name'),
-                'email' => $request->get('email'),
-                'user_message' => $request->get('message')
-            ),
-            function ($message) {
-                $message->from('pouet@avior.me');
-                $message->to('brossard.nicolas09@gmail.com', 'Admin')->subject('Super Cours Laravel');
-            }
-        );
-        Mail::send(
-            'email_receipt',
-            array(
-                'name' => $request->get('name'),
-            ),
-            function ($message) use ($email_sender) {
-                $message->from('pouet@avior.me');
-                $message->to($email_sender)->subject('Accusé de reception');
-            }
-        );
         return back()->with('success', 'Bien joué mec!');
     }
 }
