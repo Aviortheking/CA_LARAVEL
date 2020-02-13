@@ -1,0 +1,44 @@
+
+header {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  text-align: center;
+}
+
+.logo {
+  font-size: 80px;
+  color: #FF0448;
+}
+
+.title {
+  font-size: 40px;
+  color: #636b6f;
+}
+
+.description {
+  font-weight: 700;
+  font-size: 20px;
+  color: #B1B0B7;
+}
+
+body {
+  background-color: #E7E7E7;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 200;
+  color: #B1B0B7;
+  text-align: center;
+}
+
+a:link, a:visited {
+  font-weight: 700;
+  background-color: #92F2DC;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover, a:active {
+  background-color: #9DFFB3;
+}
