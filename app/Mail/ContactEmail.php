@@ -33,7 +33,7 @@ class ContactEmail extends Mailable
         return $this
             ->from('pouet@avior.me')
             ->to('pouet@avior.me')
-            ->view('email')
+            ->view('emails/contact')
             ->with($this->template)
         ;
     }

@@ -34,7 +34,7 @@ class EmailReceipt extends Mailable
         return $this
             ->from('pouet@avior.me')
             ->subject('Accusé de reception')
-            ->view('email_receipt')
+            ->view('emails/receipt')
             ->with($this->template)
         ;
     }
