@@ -2,10 +2,10 @@
 
 ## Maintainers
 
-[Florian BOUILLON](https://github.com/Aviortheking)
-[Nicolas BROSSARD](https://github.com/Nicolas-Brossard)
-[Théo MEMIN](https://github.com/jenoh)
-[Maxime SORIN](https://github.com/s0dyy)
+[Aviortheking: Florian BOUILLON](https://github.com/Aviortheking)
+[Nicolas: Nicolas BROSSARD](https://github.com/Nicolas-Brossard)
+[jenoh: Théo MEMIN](https://github.com/jenoh)
+[s0dyy: Maxime SORIN](https://github.com/s0dyy)
 
 ## Install
 
