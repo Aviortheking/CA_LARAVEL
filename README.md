@@ -7,6 +7,9 @@
 [jenoh: Théo MEMIN](https://github.com/jenoh)
 [s0dyy: Maxime SORIN](https://github.com/s0dyy)
 
+# Requirements : 
+    - GIT LFS
+
 ## Install
 
 ### Dev
