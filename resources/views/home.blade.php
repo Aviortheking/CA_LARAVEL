@@ -6,4 +6,5 @@
     <img src="img/app.png" weight=700px height=400px alt="">
     <br>
     <a href="{{ url('/contact-us') }}">Contactez-nous!</a>
+    <a href="{{ url('/login') }}">Se connecter</a>
 @endsection
