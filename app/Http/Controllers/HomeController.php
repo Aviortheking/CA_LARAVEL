@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Post;
 use DB;
 
 class HomeController extends Controller
@@ -40,5 +40,8 @@ class HomeController extends Controller
         $posts = DB::table('posts')->get();
 
         return view('blog', ['posts' => $posts]);
+    }
+    public function detail($id) {
+        return view('detail',['post' => Post::findOrFail($id)]);
     }
 }
