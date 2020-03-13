@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
+
 class HomeController extends Controller
 {
     /**
@@ -13,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     /**
@@ -32,5 +34,11 @@ class HomeController extends Controller
 
         return view('adminHome');
 
+    }
+    public function blog() {
+
+        $posts = DB::table('posts')->get();
+
+        return view('blog', ['posts' => $posts]);
     }
 }
