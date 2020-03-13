@@ -29,3 +29,8 @@ services:
      - 8101:80
     networks:
       - studiomoto
+  yarn:
+    image: project
+    volumes:
+      - ./:/project
+    command: "yarn watch"
