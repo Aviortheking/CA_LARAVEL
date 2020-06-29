@@ -54,7 +54,7 @@ RUN export COMPOSER_CACHE_DIR="/dev/null"; composer install --no-progress
 
 # Install frontend deps and build frontend
 RUN yarn \
-&& yarn build
+&& yarn development
 
 # change user back to the root user to finish building
 USER root
