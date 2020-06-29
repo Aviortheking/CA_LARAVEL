@@ -48,12 +48,12 @@ USER www-data
 COPY --chown=www-data:www-data . .
 
 # install composer deps && env
-RUN export COMPOSER_CACHE_DIR="/dev/null"; composer install --no-progress
+RUN composer global require hirak/prestissimo; composer install --no-progress
 #&& composer dump-env prod
 
 # Install frontend deps and build frontend
 RUN yarn \
-&& yarn build
+&& yarn development
 
 # change user back to the root user to finish building
 USER root
