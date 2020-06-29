@@ -48,8 +48,7 @@ USER www-data
 COPY --chown=www-data:www-data . .
 
 # install composer deps && env
-RUN composer global require hirak/prestissimo;
-RUN export COMPOSER_CACHE_DIR="/dev/null"; composer install --no-progress
+RUN composer global require hirak/prestissimo; composer install --no-progress
 #&& composer dump-env prod
 
 # Install frontend deps and build frontend
